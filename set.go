@@ -10,14 +10,14 @@ type HashSet struct {
 	internalMap map[interface{}] struct{}
 }
 
-func (set *HashSet) insert(word string) {
+func (set *HashSet) Insert(word interface{}) {
 	if set.internalMap == nil {
 		set.internalMap = make(map[interface{}] struct{})
 	}
 	set.internalMap[word] = exists
 }
 
-func (set *HashSet) exists(word string) bool{
+func (set *HashSet) Exists(word interface{}) bool{
 	if set.internalMap == nil {
 		return false
 	}
@@ -25,7 +25,18 @@ func (set *HashSet) exists(word string) bool{
 	return has
 }
 
-func (set *HashSet) remove(word string) {
+func (set *HashSet) Get(word interface{}) interface{}{
+	if set.internalMap == nil {
+		return false
+	}
+	_, has := set.internalMap[word]
+	if has {
+		return set.internalMap[word]
+	}
+	return nil
+}
+
+func (set *HashSet) Remove(word interface{}) {
 	if set.internalMap == nil {
 		return
 	}
@@ -37,6 +48,6 @@ func (set *HashSet) remove(word string) {
 
 func main() {
 	set := HashSet{}
-	set.insert("new")
-	fmt.Println(set.exists("new"))
+	set.Insert("new")
+	fmt.Println(set.Exists("new"))
 }

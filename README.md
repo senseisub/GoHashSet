@@ -1,7 +1,8 @@
 <h1>HashSet Implemention in GoLang</h1>
-<p>insert - inserts element into set
-remove - removes element in set
-exists - checks if element exists in set
+<p>Insert - inserts element into set
+Remove - removes element in set
+Exists - checks if element exists in set
+Get - returns value at key location
 </p>
 <p>
     Initialize the Set Like this:
