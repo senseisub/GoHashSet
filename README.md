@@ -5,6 +5,6 @@ Exists - checks if element exists in set
 Get - returns value at key location
 </p>
 <p>
-    Initialize the Set Like this:
-    set := HashSet{}
+    Initialize the Set Like this: <br>
+    <t> set := HashSet{}
 </p>
